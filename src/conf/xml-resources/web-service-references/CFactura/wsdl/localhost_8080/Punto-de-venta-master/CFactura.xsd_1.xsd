@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:element name="crearClasificacion" type="tns:crearClasificacion"/>
+
+<xs:element name="crearClasificacionResponse" type="tns:crearClasificacionResponse"/>
+
+<xs:element name="crearFactura" type="tns:crearFactura"/>
+
+<xs:element name="crearFacturaResponse" type="tns:crearFacturaResponse"/>
+
+<xs:element name="crearPersona" type="tns:crearPersona"/>
+
+<xs:element name="crearPersonaResponse" type="tns:crearPersonaResponse"/>
+
+<xs:element name="crearProveedor" type="tns:crearProveedor"/>
+
+<xs:element name="crearProveedorResponse" type="tns:crearProveedorResponse"/>
+
+<xs:element name="crearTipoPago" type="tns:crearTipoPago"/>
+
+<xs:element name="crearTipoPagoResponse" type="tns:crearTipoPagoResponse"/>
+
+<xs:element name="listarFacturas" type="tns:listarFacturas"/>
+
+<xs:element name="listarFacturasResponse" type="tns:listarFacturasResponse"/>
+
+<xs:element name="listarTiposPago" type="tns:listarTiposPago"/>
+
+<xs:element name="listarTiposPagoResponse" type="tns:listarTiposPagoResponse"/>
+
+<xs:element name="obtenerTipoPagoPorId" type="tns:obtenerTipoPagoPorId"/>
+
+<xs:element name="obtenerTipoPagoPorIdResponse" type="tns:obtenerTipoPagoPorIdResponse"/>
+
+<xs:complexType name="crearClasificacion">
+<xs:sequence>
+<xs:element name="idClasificacion" type="xs:int"/>
+<xs:element name="grupo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearClasificacionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearFactura">
+<xs:sequence>
+<xs:element name="idFactura" type="xs:int"/>
+<xs:element name="ruc" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="descuento" type="xs:double"/>
+<xs:element name="total" type="xs:double"/>
+<xs:element name="tiposPago" type="tns:tipoPago" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="persona" type="tns:persona" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoPago">
+<xs:sequence>
+<xs:element name="desripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="id_tipo_pago" type="xs:int"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="persona">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="id_persona" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearFacturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarFacturas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarFacturasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerTipoPagoPorId">
+<xs:sequence>
+<xs:element name="idTipoPago" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerTipoPagoPorIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tipoPago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearTipoPago">
+<xs:sequence>
+<xs:element name="idTipoPago" type="xs:int"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearTipoPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarTiposPago">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarTiposPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearPersona">
+<xs:sequence>
+<xs:element name="idPersona" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="dni" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearPersonaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearProveedor">
+<xs:sequence>
+<xs:element name="idProveedor" type="xs:int"/>
+<xs:element name="ruc" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:string" minOccurs="0"/>
+<xs:element name="pais" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="moneda" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
